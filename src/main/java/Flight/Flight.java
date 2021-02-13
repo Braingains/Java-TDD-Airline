@@ -7,6 +7,7 @@ import Plane.Plane;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Flight {
 
@@ -19,6 +20,7 @@ public class Flight {
     private String departureAirport;
     private LocalDateTime departureTime;
     private int availableSeats;
+    Random random = new Random();
 
     public Flight(ArrayList<Pilot> pilots, ArrayList<CabinCrewMember> cabinCrewMembers, Plane plane, String flightNumber, String destinationAirport, String departureAirport, LocalDateTime departureTime) {
         this.pilots = pilots;
@@ -68,11 +70,18 @@ public class Flight {
         return this.availableSeats;
     }
 
+    //this function generates a random integer between 1 and the capacity of the plane the passenger is booked on to
+    public int generateRandomSeat() {
+        int seatNumber = (int)(Math.random()*((plane.getCapacityOfPlane()-1)+1))+1;
+        return seatNumber;
+    }
+
     public String bookPassengerOnFlight(Passenger passenger, Flight flight) {
         if (getAvailableSeats() > 1){
             this.passengers.add(passenger);
             this.availableSeats -= 1;
             passenger.setFlight(flight);
+            passenger.setSeatNumber(flight.generateRandomSeat());
             return String.format ("%s's booking confirmed", passenger.getName());
 
         }

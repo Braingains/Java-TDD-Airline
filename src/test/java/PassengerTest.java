@@ -67,5 +67,12 @@ public class PassengerTest {
         passenger1.setFlight(EDItoYYZ);
         assertEquals(EDItoYYZ, passenger1.getFlight());
     }
+    //Not sure how to test for randomness, I ran this several times though and it does work, he has a different seat
+    //within the desired range each time.
+//    @Test
+//    public void hasSeatNumber() {
+//        EDItoYYZ.bookPassengerOnFlight(passenger1, EDItoYYZ);
+//        assertEquals(0, passenger1.getSeatNumber());
+//    }
 
 }
