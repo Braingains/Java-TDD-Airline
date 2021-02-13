@@ -55,8 +55,8 @@ public class FlightManagerTest {
     public void hasName() {
         assertEquals ("Graham Norton", flightManager.getName());
     }
-//    @Test
-//    public void calculatePassengerBaggageAllowance() {
-//        assertEquals(something, );
-//    }
+    @Test
+    public void calculatePassengerBaggageAllowance() {
+        assertEquals(80, flightManager.getBaggageAllowancePerPassenger(passenger1, EDItoYYZ), 0.1 );
+    }
 }

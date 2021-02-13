@@ -11,8 +11,9 @@ public class FlightManager extends Person {
         this.flight = flight;
     }
 
-//    public Double calculateBaggageAllowancePerPassenger(Passenger passenger, Flight flight) {
-//        Double planeWeightAllowance = (flight.plane.getTotalWeight() / 2);
-//    };
+    //"The weight of bag per person is the weight reserved for passenger bags divided by the capacity"
+    public Double getBaggageAllowancePerPassenger(Passenger passenger, Flight flight) {
+        return (flight.getFlightBaggageAllowance() / flight.getPlane().getCapacityOfPlane());
+    };
 
 }
