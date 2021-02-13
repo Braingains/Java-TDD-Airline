@@ -8,6 +8,7 @@ import Plane.PlaneType;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -43,9 +44,8 @@ public class FlightTest {
         testCabinCrewMembers.add(cabinCrewMember1);
         testCabinCrewMembers.add(cabinCrewMember2);
         ArrayList<Passenger> testPassengers = new ArrayList<Passenger>();
-        EDItoYYZ = new Flight(testPilots, testCabinCrewMembers, plane1,"kW33N", "YYZ", "EDI", "10:30");
-        EDItoYYZ2 = new Flight(testPilots, testCabinCrewMembers, plane2,"kW33N", "YYZ", "EDI", "10:30");
-
+        EDItoYYZ = new Flight(testPilots, testCabinCrewMembers, plane1,"kW33N", "YYZ", "EDI", LocalDateTime.of(2021, 2, 13, 10, 30));
+        EDItoYYZ2 = new Flight(testPilots, testCabinCrewMembers, plane2,"kW33N", "YYZ", "EDI", LocalDateTime.of(2021, 2, 13, 10, 30));
     }
 
     @Test
@@ -75,7 +75,7 @@ public class FlightTest {
     }
     @Test
     public void hasDepartureTime() {
-        assertEquals("10:30", EDItoYYZ.getDepartureTime());
+        assertEquals(LocalDateTime.of(2021, 2, 13, 10, 30), EDItoYYZ.getDepartureTime());
     }
     @Test
     public void initiallyHasNoPassengers() {

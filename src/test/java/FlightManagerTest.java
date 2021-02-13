@@ -9,6 +9,7 @@ import Plane.PlaneType;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -45,8 +46,8 @@ public class FlightManagerTest {
         testCabinCrewMembers.add(cabinCrewMember1);
         testCabinCrewMembers.add(cabinCrewMember2);
         ArrayList<Passenger> testPassengers = new ArrayList<Passenger>();
-        EDItoYYZ = new Flight(testPilots, testCabinCrewMembers, plane1,"kW33N", "YYZ", "EDI", "10:30");
-        EDItoYYZ2 = new Flight(testPilots, testCabinCrewMembers, plane2,"kW33N", "YYZ", "EDI", "10:30");
+        EDItoYYZ = new Flight(testPilots, testCabinCrewMembers, plane1,"kW33N", "YYZ", "EDI", LocalDateTime.of(2021, 2, 13, 10, 30));
+        EDItoYYZ2 = new Flight(testPilots, testCabinCrewMembers, plane2,"kW33N", "YYZ", "EDI", LocalDateTime.of(2021, 2, 13, 10, 30));
 
         flightManager = new FlightManager("Graham Norton", EDItoYYZ);
     }
