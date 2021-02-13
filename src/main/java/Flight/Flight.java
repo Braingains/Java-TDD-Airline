@@ -78,6 +78,6 @@ public class Flight {
     }
 
     public double getFlightBaggageAllowance() {
-        return (plane.getCapacityOfPlane() / 2);
+        return (plane.getWeightReservedForBaggage());
     }
 }
