@@ -29,7 +29,9 @@ public class FlightTest {
         passenger2 = new Passenger("Michelle Visage", 67);
         plane1 = new Plane (PlaneType.GOING_hUg3);
         plane2 = new Plane (PlaneType.GOING_W33);
-        EDItoYYZ = new Flight(,2,100, plane1,"kW33N", "YYZ", "EDI", "10:30");
+        ArrayList<Pilot> testPilots = new ArrayList<Pilot>();
+        ArrayList<CabinCrewMember> testCabinCrewMembers = new ArrayList<CabinCrewMember>();
+        EDItoYYZ = new Flight(testPilots, testCabinCrewMembers, plane1,"kW33N", "YYZ", "EDI", "10:30");
 
     }
 }
