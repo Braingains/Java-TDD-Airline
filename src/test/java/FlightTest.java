@@ -1,7 +1,10 @@
+import Flight.Flight;
 import People.Crew.CabinCrewMember;
 import People.Crew.Pilot;
 import People.Crew.RankType;
 import People.Passenger;
+import Plane.Plane;
+import Plane.PlaneType;
 import org.junit.Before;
 import org.junit.Test;
 

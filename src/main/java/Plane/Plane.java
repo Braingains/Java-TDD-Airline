@@ -1,3 +1,5 @@
+package Plane;
+
 public class Plane {
 
     private PlaneType planeType;
