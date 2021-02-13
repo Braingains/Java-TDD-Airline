@@ -63,4 +63,9 @@ public class FlightTest {
     public void hasFlightNumber() {
         assertEquals("kW33N", EDItoYYZ.getFlightNumber());
     }
+    @Test
+
+    public void hasDestination() {
+        assertEquals("YYZ", EDItoYYZ.getDestinationAirport());
+    }
 }
