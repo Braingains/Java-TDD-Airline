@@ -1,19 +1,19 @@
 public class Plane {
 
-    private final PlaneType PlaneType;
+    private PlaneType planeType;
 
     public Plane (PlaneType planeType) {
-        this.PlaneType = planeType;
+        this.planeType = planeType;
 
 
     }
 
 
-    public int getCapacity() {
-        return this.PlaneType.getCapacity();
+    public int getCapacityOfPlane() {
+        return this.planeType.getCapacity();
     }
 
     public double getTotalWeight() {
-        return this.PlaneType.getTotalWeight();
+        return this.planeType.getTotalWeight();
     }
 }

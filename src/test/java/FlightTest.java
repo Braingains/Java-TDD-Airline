@@ -20,7 +20,8 @@ public class FlightTest {
     Plane plane1;
     Plane plane2;
     Flight EDItoYYZ;
-    Flight PSLtoPER;
+    Flight EDItoYYZ2;
+
 
     @Before
     public void before() {
@@ -31,14 +32,16 @@ public class FlightTest {
         passenger1 = new Passenger("Rupaul Charles", 4);
         passenger2 = new Passenger("Michelle Visage", 67);
         plane1 = new Plane (PlaneType.GOING_hUg3);
-        plane2 = new Plane (PlaneType.GOING_W33);
+        plane2 = new Plane (PlaneType.GOING_TEST);
         ArrayList<Pilot> testPilots = new ArrayList<Pilot>();
         testPilots.add(pilot1);
         testPilots.add(pilot2);
         ArrayList<CabinCrewMember> testCabinCrewMembers = new ArrayList<CabinCrewMember>();
         testCabinCrewMembers.add(cabinCrewMember1);
         testCabinCrewMembers.add(cabinCrewMember2);
+        ArrayList<Passenger> testPassengers = new ArrayList<Passenger>();
         EDItoYYZ = new Flight(testPilots, testCabinCrewMembers, plane1,"kW33N", "YYZ", "EDI", "10:30");
+        EDItoYYZ2 = new Flight(testPilots, testCabinCrewMembers, plane2,"kW33N", "YYZ", "EDI", "10:30");
 
     }
 
@@ -50,10 +53,6 @@ public class FlightTest {
     @Test
     public void hasCabinCrew() {
         assertEquals(2, EDItoYYZ.getNumberOfCabinCrew());
-    }
-    @Test
-    public void initallyHasNoPassengers() {
-        assertEquals(0, EDItoYYZ.getNumberOfPassengers());
     }
     @Test
     public void hasPlane() {
@@ -75,5 +74,28 @@ public class FlightTest {
     public void hasDepartureTime() {
         assertEquals("10:30", EDItoYYZ.getDepartureTime());
     }
+    @Test
+    public void initiallyHasNoPassengers() {
+        assertEquals(0, EDItoYYZ.getNumberOfPassengers());
+    }
+    @Test
+    public void hasAvailableSeats() {
+        assertEquals(200, EDItoYYZ.getAvailableSeats());
+    }
+    @Test
+    public void canBookPassenger() {
+        EDItoYYZ.bookPassengerOnFlight(passenger1);
+        assertEquals(199, EDItoYYZ.getAvailableSeats());
+    }
+    @Test
+    public void canBookPassenger2() {
+        assertEquals("Rupaul Charles's booking confirmed", EDItoYYZ.bookPassengerOnFlight(passenger1));
+    }
+    @Test
+    public void cannotBookOntoFullFlight() {
+        EDItoYYZ2.bookPassengerOnFlight(passenger1);
+        assertEquals("booking failed: flight full", EDItoYYZ2.bookPassengerOnFlight(passenger2));
 
+
+    }
 }

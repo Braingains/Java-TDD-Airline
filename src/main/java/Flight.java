@@ -14,6 +14,7 @@ public class Flight {
     private String destinationAirport;
     private String departureAirport;
     private String departureTime;
+    private int availableSeats;
 
     public Flight(ArrayList<Pilot> pilots, ArrayList<CabinCrewMember> cabinCrewMembers, Plane plane, String flightNumber, String destinationAirport, String departureAirport, String departureTime) {
         this.pilots = pilots;
@@ -24,6 +25,7 @@ public class Flight {
         this.destinationAirport = destinationAirport;
         this.departureAirport = departureAirport;
         this.departureTime = departureTime;
+        this.availableSeats = plane.getCapacityOfPlane();
     }
 
     public int getNumberOfPilots(){
@@ -57,5 +59,19 @@ public class Flight {
 
     public String getDepartureTime() {
         return this.departureTime;
+    }
+
+    public int getAvailableSeats() {
+        return this.availableSeats;
+    }
+
+    public String bookPassengerOnFlight(Passenger passenger) {
+        if (getAvailableSeats() > 1){
+            this.passengers.add(passenger);
+            this.availableSeats -= 1;
+            return String.format ("%s's booking confirmed", passenger.getName());
+
+        }
+        return "booking failed: flight full";
     }
 }
