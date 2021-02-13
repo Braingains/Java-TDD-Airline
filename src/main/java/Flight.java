@@ -26,6 +26,20 @@ public class Flight {
         this.departureTime = departureTime;
     }
 
+    public int getNumberOfPilots(){
+        return this.pilots.size();
+    }
 
 
+    public int getNumberOfCabinCrew() {
+        return this.cabinCrewMembers.size();
+    }
+
+    public int getNumberOfPassengers() {
+        return this.passengers.size();
+    }
+
+    public Plane getPlane() {
+        return this.plane;
+    }
 }
