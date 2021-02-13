@@ -64,12 +64,16 @@ public class FlightTest {
         assertEquals("kW33N", EDItoYYZ.getFlightNumber());
     }
     @Test
-    public void hasDestination() {
+    public void hasDestinationAirport() {
         assertEquals("YYZ", EDItoYYZ.getDestinationAirport());
     }
     @Test
-    public void hasDeparture() {
+    public void hasDepartureAirport() {
         assertEquals("EDI", EDItoYYZ.getDepartureAirport());
+    }
+    @Test
+    public void hasDepartureTime() {
+        assertEquals("10:30", EDItoYYZ.getDepartureTime());
     }
 
 }
