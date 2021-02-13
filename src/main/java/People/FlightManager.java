@@ -11,4 +11,8 @@ public class FlightManager extends Person {
         this.flight = flight;
     }
 
+//    public Double calculateBaggageAllowancePerPassenger(Passenger passenger, Flight flight) {
+//        Double planeWeightAllowance = (flight.plane.getTotalWeight() / 2);
+//    };
+
 }

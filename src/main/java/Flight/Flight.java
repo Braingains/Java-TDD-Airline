@@ -35,7 +35,6 @@ public class Flight {
         return this.pilots.size();
     }
 
-
     public int getNumberOfCabinCrew() {
         return this.cabinCrewMembers.size();
     }
@@ -76,5 +75,9 @@ public class Flight {
 
         }
         return "booking failed: flight full";
+    }
+
+    public double getFlightBaggageAllowance() {
+        return (plane.getCapacityOfPlane() / 2);
     }
 }

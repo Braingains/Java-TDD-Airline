@@ -101,4 +101,8 @@ public class FlightTest {
 
 
     }
+    @Test
+    public void canGetFlightBaggageAllowance() {
+        assertEquals(80.0, EDItoYYZ2.getFlightBaggageAllowance(), 0.1);
+    }
 }

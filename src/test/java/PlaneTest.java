@@ -27,4 +27,9 @@ public class PlaneTest {
     public void hasTotalWeight() {
         assertEquals(32000.0, plane1.getTotalWeight(), 0.01);
     }
+
+    @Test
+    public void hasBaggageWeight() {
+        assertEquals(16000.0, plane1.getWeightReservedForBaggage(), 0.1);
+    }
 }
