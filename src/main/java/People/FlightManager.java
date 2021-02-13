@@ -20,4 +20,10 @@ public class FlightManager extends Person {
         return (flight.getNumberOfPassengers() * getBaggageAllowancePerPassenger(flight));
     }
 
+    public Double getRemainingBaggageSpaceOnFlight(Flight flight) {
+        Double RemainingSpace = flight.getFlightBaggageAllowance();
+        Double TotalBaggageWeight = getTotalBaggageWeightOnFlight(flight);
+        return RemainingSpace - TotalBaggageWeight;
+    }
+
 }

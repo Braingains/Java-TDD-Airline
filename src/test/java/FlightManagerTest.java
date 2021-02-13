@@ -66,4 +66,10 @@ public class FlightManagerTest {
         EDItoYYZ.bookPassengerOnFlight(passenger2);
         assertEquals(160, flightManager.getTotalBaggageWeightOnFlight(EDItoYYZ), 0.1);
     }
+    @Test
+    public void calculateTotalRemainingSpace() {
+        EDItoYYZ.bookPassengerOnFlight(passenger1);
+        EDItoYYZ.bookPassengerOnFlight(passenger2);
+        assertEquals(15840.0, flightManager.getRemainingBaggageSpaceOnFlight(EDItoYYZ), 0.1);
+    }
 }
