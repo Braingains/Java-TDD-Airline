@@ -57,6 +57,13 @@ public class FlightManagerTest {
     }
     @Test
     public void calculatePassengerBaggageAllowance() {
-        assertEquals(80, flightManager.getBaggageAllowancePerPassenger(passenger1, EDItoYYZ), 0.1 );
+        assertEquals(80, flightManager.getBaggageAllowancePerPassenger(EDItoYYZ), 0.1 );
+    }     //does this mean each bag weighs the same as a person!? I think I'm just overthinking this.
+
+    @Test
+    public void calculateTotalBaggageWeightOnFlight() {
+        EDItoYYZ.bookPassengerOnFlight(passenger1);
+        EDItoYYZ.bookPassengerOnFlight(passenger2);
+        assertEquals(160, flightManager.getTotalBaggageWeightOnFlight(EDItoYYZ), 0.1);
     }
 }
