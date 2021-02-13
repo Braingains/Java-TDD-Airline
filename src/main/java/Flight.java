@@ -42,4 +42,8 @@ public class Flight {
     public Plane getPlane() {
         return this.plane;
     }
+
+    public String getFlightNumber() {
+        return this.flightNumber;
+    }
 }
