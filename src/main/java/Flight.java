@@ -50,4 +50,8 @@ public class Flight {
     public String getDestinationAirport() {
         return this.destinationAirport;
     }
+
+    public String getDepartureAirport() {
+        return this.departureAirport;
+    }
 }
