@@ -87,17 +87,17 @@ public class FlightTest {
     }
     @Test
     public void canBookPassenger() {
-        EDItoYYZ.bookPassengerOnFlight(passenger1);
+        EDItoYYZ.bookPassengerOnFlight(passenger1, EDItoYYZ);
         assertEquals(199, EDItoYYZ.getAvailableSeats());
     }
     @Test
     public void canBookPassenger2() {
-        assertEquals("Rupaul Charles's booking confirmed", EDItoYYZ.bookPassengerOnFlight(passenger1));
+        assertEquals("Rupaul Charles's booking confirmed", EDItoYYZ.bookPassengerOnFlight(passenger1, EDItoYYZ));
     }
     @Test
     public void cannotBookOntoFullFlight() {
-        EDItoYYZ2.bookPassengerOnFlight(passenger1);
-        assertEquals("booking failed: flight full", EDItoYYZ2.bookPassengerOnFlight(passenger2));
+        EDItoYYZ2.bookPassengerOnFlight(passenger1, EDItoYYZ);
+        assertEquals("booking failed: flight full", EDItoYYZ2.bookPassengerOnFlight(passenger2, EDItoYYZ));
 
 
     }

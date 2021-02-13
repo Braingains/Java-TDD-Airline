@@ -68,10 +68,11 @@ public class Flight {
         return this.availableSeats;
     }
 
-    public String bookPassengerOnFlight(Passenger passenger) {
+    public String bookPassengerOnFlight(Passenger passenger, Flight flight) {
         if (getAvailableSeats() > 1){
             this.passengers.add(passenger);
             this.availableSeats -= 1;
+            passenger.setFlight(flight);
             return String.format ("%s's booking confirmed", passenger.getName());
 
         }

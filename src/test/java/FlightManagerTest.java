@@ -63,14 +63,14 @@ public class FlightManagerTest {
 
     @Test
     public void calculateTotalBaggageWeightOnFlight() {
-        EDItoYYZ.bookPassengerOnFlight(passenger1);
-        EDItoYYZ.bookPassengerOnFlight(passenger2);
+        EDItoYYZ.bookPassengerOnFlight(passenger1, EDItoYYZ);
+        EDItoYYZ.bookPassengerOnFlight(passenger2, EDItoYYZ);
         assertEquals(160, flightManager.getTotalBaggageWeightOnFlight(EDItoYYZ), 0.1);
     }
     @Test
     public void calculateTotalRemainingSpace() {
-        EDItoYYZ.bookPassengerOnFlight(passenger1);
-        EDItoYYZ.bookPassengerOnFlight(passenger2);
+        EDItoYYZ.bookPassengerOnFlight(passenger1, EDItoYYZ);
+        EDItoYYZ.bookPassengerOnFlight(passenger2, EDItoYYZ);
         assertEquals(15840.0, flightManager.getRemainingBaggageSpaceOnFlight(EDItoYYZ), 0.1);
     }
 }
